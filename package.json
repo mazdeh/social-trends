@@ -1,0 +1,16 @@
+{
+  "name": "twitter-oauth",
+  "version": "1.0.0",
+  "description": "Twitter API",
+  "main": "app.js",
+  "author": "Vahid Mazdeh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.11.2",
+    "oauth-1.0a": "*",
+    "querystring": "*",
+    "cors": "*",
+    "request": "*",
+    "twitter": "*"
+  }
+}

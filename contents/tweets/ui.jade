@@ -1,0 +1,17 @@
+h5 Search
+.row
+    .col-md-8
+        .form-group.form-group-default
+            label Phrase            
+            input#inputPhrase.form-control(type='text', required='')                
+    .col-md-4                         
+        button.btn.btn-primary(onClick='tweets.searchByPhrase($("#inputPhrase").val())') Search
+
+
+
+h5 Cool Phrases
+ul
+    li
+        a(href="#" onClick='tweets.searchByPhrase("Shredding the Gnar")') Shredding the Gnar!
+    li
+        a(href="#" onClick='tweets.searchByPhrase("Cool Story Bro")') Cool Story Bro!

@@ -1,0 +1,8 @@
+h5 Search
+.row
+    .col-md-8
+        .form-group.form-group-default
+            label Name            
+            input#name.form-control(type='text', required='')                
+    .col-md-4                         
+        button.btn.btn-primary(onClick='users.searchByName($("#name").val())') Search
