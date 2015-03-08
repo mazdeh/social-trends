@@ -32,24 +32,22 @@ app.get("/*", function(req, res) {
 
     try{
 
-      client.get(req.url, params, function(error, tweets, response){
+      client.get(req.url, {id: 1}, function(error, tweets, response){
         if (!error) 
         {
-          console.log("im here");
+          console.log("im here")
           res.send(tweets);
-          res.send(response);
           console.log(response);
         }
-        else {
-          console.log("im in the error");
+        else{
+          console.log("im in the error")
           res.send(error);
         }
       });
 
     }
     catch (ex){
-      console.log(tweets);
-      console.log(ex);
+
       res.send("this is the catch");
 
     }
