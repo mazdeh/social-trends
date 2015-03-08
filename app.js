@@ -1,12 +1,19 @@
 var app = require("express")();
 var querystring = require('querystring');
-//var OAuth   = require('oauth').OAuth;
 var cors = require("cors");
 var request = require('request');
 var OAuth   = require('oauth-1.0a');
+var Facebook = require('facebook-node-sdk');
+
+
+
 
 // blah start
 app.use(cors());
+
+app.configure(function () {
+  app.use(Facebook.middleware({appID: '1638123243082958', secret: 'b5de961c3f2e0bcbfab48e11f08b6f02'}));
+})
 
 var Twitter = require('twitter');
  
@@ -29,6 +36,13 @@ var server = app.listen(app.get('port'), function() {
 })
 
 
+app.get("/", Facebook.loginRequired(), function (req, res) {
+  req.facebook.api('/me', function(err, user) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello, ' + user.name + '!');
+  });
+});
+
 app.get("/*", function(req, res) {
 
     try{
@@ -36,11 +50,15 @@ app.get("/*", function(req, res) {
       client.get(req.url, null, function(error, tweets, response){
         if (!error) 
         {
+          console.log("im here")
           res.send(tweets);
+          cnosole.log(response)
         }
         else{
+          console.log("im in else")
           res.send(error);
         }
+        console.log("im in else")
         console.log(error);
       });
 

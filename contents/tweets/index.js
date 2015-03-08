@@ -4,8 +4,20 @@ var tweets = {
 
         var phrase = inputPhrase || 'lazy'
 
-        $.get("http://apitwitterhack.herokuapp.com/search/tweets.json?q=\"" + phrase +"\"", function(data) {
-            data = data.statuses
+        // $.get("http://socialtrends.herokuapp.com/application/rate_limit_status.json?trends=place", function(data) {
+
+        //     $.get("/twitter/tweets/list.jade", function(template) {
+        //             var html = jade.render(template, {
+        //                 data: data
+        //             })
+        //             $("#list").html(html)
+        //         })
+        // })
+
+        $.get("https://socialtrends.herokuapp.com/trends/place.json?id=1", function(data) {
+             data = data.trends
+
+            // var items=JSON.parse(data)
 
                 $.get("/twitter/tweets/list.jade", function(template) {
                     var html = jade.render(template, {
@@ -13,14 +25,26 @@ var tweets = {
                     })
                     $("#list").html(html)
                 })
-
-
-
         })
+
+
+        // $.get("https://socialtrends.herokuapp.com/trends/available.json", function(data) {
+        //      data = data
+
+        //     // var items=JSON.parse(data)
+
+        //         $.get("/twitter/tweets/list.jade", function(template) {
+        //             var html = jade.render(template, {
+        //                 data: data
+        //             })
+        //             $("#list").html(html)
+        //         })
+        // })
 
     },
 
     load: function() {
+
 
         $.get("/twitter/tweets/ui.jade", function(template) {
             var html = jade.render(template)
@@ -28,7 +52,7 @@ var tweets = {
         })
 
         // default search results
-        tweets.searchByPhrase('Twitter')
+        // tweets.searchByPhrase('1')
 
     }
 
