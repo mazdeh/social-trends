@@ -14,7 +14,7 @@ var tweets = {
         //         })
         // })
 
-        $.get("http://socialtrends.herokuapp.com/trends/place.json?id=1", function(data) {
+        $.get("http:/api.twitter.com/1.1/trends/place.json?id=1", function(data) {
              data = data.trends
 
             // var items=JSON.parse(data)
