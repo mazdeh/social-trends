@@ -1,8 +1,7 @@
-//- h3 Results
-//- each item in data
-//- 	pre(style='white-space:pre;')
-//- 		| Name: #{item.name}
-//- 		| URL: #{item.url}
-
-h3 Raw data
-pre= JSON.stringify(data, null, ' ')
+h3 Twitter Trends
+each item in data
+	.row
+		.col-md-8
+			- var foo = item.name
+			button.btn.btn-primary(onClick='tweets.searchByPhrase(foo)') #{item.name}
+			//- a(href=item.url) #{item.name}

@@ -2,7 +2,8 @@ var tweets = {
 
     searchByPhrase: function(inputPhrase) {
 
-        var phrase = inputPhrase || 'lazy'
+        // var phrase = inputPhrase
+        // console.log(phrase)
 
         // $.get("http://socialtrends.herokuapp.com/application/rate_limit_status.json?trends=place", function(data) {
 
@@ -46,9 +47,8 @@ var tweets = {
 
     load: function() {
 
-        var params = {id: 2450022};
         $.get("https://socialtrends.herokuapp.com/trends/place.json", function(data) {
-             data = data
+             data = data[0].trends
 
                 $.get("/twitter/tweets/list.jade", function(template) {
                     var html = jade.render(template, {

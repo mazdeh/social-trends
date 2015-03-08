@@ -12,6 +12,7 @@
     "cors": "*",
     "request": "*",
     "twitter": "*",
-    "facebook-node-sdk": "*"
+    "facebook-node-sdk": "*",
+    "instagram-node-lib": "*"
   }
 }
