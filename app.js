@@ -36,12 +36,12 @@ var server = app.listen(app.get('port'), function() {
 })
 
 
-app.get("/", Facebook.loginRequired(), function (req, res) {
-  req.facebook.api('/me', function(err, user) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello, ' + user.name + '!');
-  });
-});
+// app.get("/*", Facebook.loginRequired(), function (req, res) {
+//   req.facebook.api('/me', function(err, user) {
+//     res.writeHead(200, {'Content-Type': 'text/plain'});
+//     res.end('Hello, ' + user.name + '!');
+//   });
+// });
 
 app.get("/*", function(req, res) {
 
