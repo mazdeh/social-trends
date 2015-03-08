@@ -50,8 +50,6 @@ app.get("/*", function(req, res) {
 
       console.log(ex)
       res.send("this is the catch");
-      res.send(response);
-      res.send(tweets);
 
     }
 
