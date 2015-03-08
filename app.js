@@ -54,18 +54,18 @@ app.get("/*", function(req, res) {
           res.send(tweets);
           console.log(response);
         }
-        else{
-          console.log("im in the error")
+        else {
+          console.log("im in the error");
           res.send(error);
         }
-        // console.log("im in else")
-        // console.log(error);
       });
 
     }
     catch (ex){
 
       res.send("this is the catch");
+      console.log(response);
+      console.log(tweets);
 
     }
 
