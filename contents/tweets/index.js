@@ -50,8 +50,6 @@ var tweets = {
         $.get("https://socialtrends.herokuapp.com/trends/place.json", params, function(data) {
              data = data
 
-            // var items=JSON.parse(data)
-
                 $.get("/twitter/tweets/list.jade", function(template) {
                     var html = jade.render(template, {
                         data: data

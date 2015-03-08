@@ -5,15 +5,8 @@ var request = require('request');
 var OAuth   = require('oauth-1.0a');
 var Facebook = require('facebook-node-sdk');
 
-
-
-
 // blah start
 app.use(cors());
-
-// app.configure(function () {
-//   app.use(Facebook.middleware({appID: '1638123243082958', secret: 'b5de961c3f2e0bcbfab48e11f08b6f02'}));
-// })
 
 var Twitter = require('twitter');
  
@@ -34,14 +27,6 @@ var server = app.listen(app.get('port'), function() {
     var port = server.address().port
     console.log('App listening at http://%s:%s', host, port)
 })
-
-
-// app.get("/*", Facebook.loginRequired(), function (req, res) {
-//   req.facebook.api('/me', function(err, user) {
-//     res.writeHead(200, {'Content-Type': 'text/plain'});
-//     res.end('Hello, ' + user.name + '!');
-//   });
-// });
 
 app.get("/*", function(req, res) {
 
@@ -64,8 +49,8 @@ app.get("/*", function(req, res) {
     catch (ex){
 
       res.send("this is the catch");
-      console.log(response);
-      console.log(tweets);
+      res.send(response);
+      res.send(tweets);
 
     }
 
