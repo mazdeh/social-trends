@@ -14,18 +14,19 @@ var tweets = {
         //         })
         // })
 
-        $.get("https://socialtrends.herokuapp.com/trends/1.json", function(data) {
-             data = data
+        // var params = {id: 1}
+        // $.get("https://socialtrends.herokuapp.com/trends/place.json", params, function(data) {
+        //      data = data
 
-            // var items=JSON.parse(data)
+        //     // var items=JSON.parse(data)
 
-                $.get("/twitter/tweets/list.jade", function(template) {
-                    var html = jade.render(template, {
-                        data: data
-                    })
-                    $("#list").html(html)
-                })
-        })
+        //         $.get("/twitter/tweets/list.jade", function(template) {
+        //             var html = jade.render(template, {
+        //                 data: data
+        //             })
+        //             $("#list").html(html)
+        //         })
+        // })
 
 
         // $.get("https://socialtrends.herokuapp.com/trends/available.json", function(data) {
@@ -44,6 +45,20 @@ var tweets = {
     },
 
     load: function() {
+
+        var params = {id: 1}
+        $.get("https://socialtrends.herokuapp.com/trends/place.json", params, function(data) {
+             data = data
+
+            // var items=JSON.parse(data)
+
+                $.get("/twitter/tweets/list.jade", function(template) {
+                    var html = jade.render(template, {
+                        data: data
+                    })
+                    $("#list").html(html)
+                })
+        })
 
 
         $.get("/twitter/tweets/ui.jade", function(template) {

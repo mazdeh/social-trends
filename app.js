@@ -47,16 +47,16 @@ app.get("/*", function(req, res) {
 
     try{
 
-      client.get(req.url, {id: 1}, function(error, tweets, response){
+      client.get(req.url, params, function(error, tweets, response){
         if (!error) 
         {
-          console.log("im here")
+          console.log("im here");
           res.send(tweets);
+          res.send(response);
           console.log(response);
         }
         else{
           console.log("im in the error")
-          console.log(response)
           res.send(error);
         }
         // console.log("im in else")

@@ -1,10 +1,8 @@
-//- h3 Results
-//- each item in data
-//- 	pre(style='white-space:pre;')
-//- 		| User: #{item.user.name}
-//- 		| Text: #{item.text}
-//- 		| Created at: #{item.created_at}
-
+h3 Results
+each item in data.trends
+	pre(style='white-space:pre;')
+		| Name: #{item.name}
+		| URL: #{item.url}
 
 h3 Raw data
 pre= JSON.stringify(data, null, ' ')
