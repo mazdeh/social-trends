@@ -37,6 +37,7 @@ app.get("/*", function(req, res) {
         {
           console.log("im here");
           res.send(tweets);
+          res.send(response);
           console.log(response);
         }
         else {
@@ -47,7 +48,6 @@ app.get("/*", function(req, res) {
 
     }
     catch (ex){
-      console.log(response);
       console.log(tweets);
       console.log(ex);
       res.send("this is the catch");

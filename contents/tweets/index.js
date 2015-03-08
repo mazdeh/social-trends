@@ -46,8 +46,8 @@ var tweets = {
 
     load: function() {
 
-        var params = {id: 23424975};
-        $.get("https://socialtrends.herokuapp.com/trends/place.json", params, function(data) {
+        var params = {id: 2450022};
+        $.get("https://socialtrends.herokuapp.com/trends/place.json", {id: 2450022}, function(data) {
              data = data
 
                 $.get("/twitter/tweets/list.jade", function(template) {
