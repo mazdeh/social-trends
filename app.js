@@ -52,7 +52,6 @@ app.get("/*", function(req, res) {
         {
           console.log("im here");
           res.send(tweets);
-          res.send(response);
           console.log(response);
         }
         else{
