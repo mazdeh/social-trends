@@ -47,8 +47,9 @@ app.get("/*", function(req, res) {
 
     }
     catch (ex){
-
-      // console.log(ex)
+      console.log(response);
+      console.log(tweets);
+      console.log(ex);
       res.send("this is the catch");
 
     }
