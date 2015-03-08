@@ -55,11 +55,11 @@ app.get("/*", function(req, res) {
           cnosole.log(response)
         }
         else{
-          console.log("im in else")
+          console.log("im in the error")
           res.send(error);
         }
-        console.log("im in else")
-        console.log(error);
+        // console.log("im in else")
+        // console.log(error);
       });
 
     }
