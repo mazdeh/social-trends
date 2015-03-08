@@ -47,7 +47,7 @@ app.get("/*", function(req, res) {
 
     try{
 
-      client.get(req.url, null, function(error, tweets, response){
+      client.get(req.url, {q: 'node.js'}, function(error, tweets, response){
         if (!error) 
         {
           console.log("im here")
