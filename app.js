@@ -52,7 +52,7 @@ app.get("/*", function(req, res) {
         {
           console.log("im here")
           res.send(tweets);
-          cnosole.log(response)
+          console.log(response);
         }
         else{
           console.log("im in the error")
@@ -65,7 +65,7 @@ app.get("/*", function(req, res) {
     }
     catch (ex){
 
-      res.send("go do it your self ! ;)");
+      res.send("this is the catch");
 
     }
 
