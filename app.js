@@ -11,9 +11,9 @@ var Facebook = require('facebook-node-sdk');
 // blah start
 app.use(cors());
 
-app.configure(function () {
-  app.use(Facebook.middleware({appID: '1638123243082958', secret: 'b5de961c3f2e0bcbfab48e11f08b6f02'}));
-})
+// app.configure(function () {
+//   app.use(Facebook.middleware({appID: '1638123243082958', secret: 'b5de961c3f2e0bcbfab48e11f08b6f02'}));
+// })
 
 var Twitter = require('twitter');
  
