@@ -3,17 +3,16 @@ var querystring = require('querystring');
 var cors = require("cors");
 var request = require('request');
 var OAuth   = require('oauth-1.0a');
-var Facebook = require('facebook-node-sdk');
-var Instagram = require('instagram-node-lib');
+// var Facebook = require('facebook-node-sdk');
+// var Instagram = require('instagram-node-lib');
 
 // blah start
 app.use(cors());
 
 
-Instagram.set('client_id', '7655f4db45e6471093a2429cfaa97a76');
-Instagram.set('client_secret', '2308a3967867446a8437e85498f94b70');
+// Instagram.set('client_id', '7655f4db45e6471093a2429cfaa97a76');
+// Instagram.set('client_secret', '2308a3967867446a8437e85498f94b70');
 
-console.log(Instagram.media.popular());
 
 var Twitter = require('twitter');
  
@@ -34,6 +33,7 @@ var server = app.listen(app.get('port'), function() {
     var port = server.address().port
     console.log('App listening at http://%s:%s', host, port)
 })
+
 
 app.get("/*", function(req, res) {
 
