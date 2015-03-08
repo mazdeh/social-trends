@@ -14,7 +14,7 @@ var tweets = {
         //         })
         // })
 
-        $.get("https://socialtrends.herokuapp.com/trends/available.json", function(data) {
+        $.get("https://socialtrends.herokuapp.com/trends/1.json", function(data) {
              data = data
 
             // var items=JSON.parse(data)
