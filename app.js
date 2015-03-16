@@ -39,7 +39,7 @@ app.get("/*", function(req, res) {
 
     try{
 
-      client.get(req.url, function(error, tweets, response){
+      client.get(req.url, {id: 1}, function(error, tweets, response){
         if (!error) 
         {
           res.send(tweets);
