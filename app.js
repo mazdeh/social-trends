@@ -44,7 +44,7 @@ app.get("/*", function(req, res) {
       console.log("I'm req.params:", req.params)
       console.log("I'm params: ", params)
 
-      client.get(req.url, params, function(error, tweets, response){
+      client.get(req.url, function(error, tweets, response){
         if (!error) 
         {
           res.send(tweets);
