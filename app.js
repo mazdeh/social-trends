@@ -39,10 +39,10 @@ app.get("/*", function(req, params, res) {
 
     try{
 
-      console.log("req: ", req)
-      console.log("req.url:", req.url)
-      console.log("req.params:", req.params)
-      console.log("params: ", params)
+      console.log("I'm req: ", req)
+      console.log("I'm req.url:", req.url)
+      console.log("I'm req.params:", req.params)
+      console.log("I'm params: ", params)
 
       client.get(req.url, params, function(error, tweets, response){
         if (!error) 
