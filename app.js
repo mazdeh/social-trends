@@ -35,7 +35,7 @@ var server = app.listen(app.get('port'), function() {
 })
 
 
-app.get("/*", function(req, params, res) {
+app.get("/*", function(req, res) {
 
     try{
 
