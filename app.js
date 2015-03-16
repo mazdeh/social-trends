@@ -39,12 +39,11 @@ app.get("/*", function(req, res) {
 
     try{
 
-      var params = {id: 1}
+      // var params = {id: 1}
 
       client.get(req.url, params, function(error, tweets, response){
         if (!error) 
         {
-          console.log("im here")
           res.send(tweets);
           console.log(response);
         }
