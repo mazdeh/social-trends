@@ -35,11 +35,14 @@ var server = app.listen(app.get('port'), function() {
 })
 
 
-app.get("/*", function(req, res) {
+app.get("/*", function(req, params, res) {
 
     try{
 
-      // var params = {id: 1}
+      console.log("req: ", req)
+      console.log("req.url:", req.url)
+      console.log("req.params:", req.params)
+      console.log("params: ", params)
 
       client.get(req.url, params, function(error, tweets, response){
         if (!error) 
