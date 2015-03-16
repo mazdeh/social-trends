@@ -39,7 +39,9 @@ app.get("/*", function(req, res) {
 
     try{
 
-      client.get(req.url, {q: 'app.js'}, function(error, tweets, response){
+      var params = {id: 1}
+
+      client.get(req.url, params, function(error, tweets, response){
         if (!error) 
         {
           console.log("im here")
